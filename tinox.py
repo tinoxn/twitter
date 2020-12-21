@@ -60,15 +60,15 @@ def classify_tweet(user_text):
     predicted = model.predict(text_vec)
     return predicted
 
-st.title("Welcome to Kay website")
+st.title("Welcome Bot-Twitter")
 st.header("Enter the tweet text")
-user_text = st.text_input("Enter the tweet text")
+user_text = st.text_input("Your tweet")
 result = ""
 r = ""
-if st.button("Classify Tweet"):
+if st.button("check up Tweet"):
     result = classify_tweet(user_text)
     if result == [0]:
-        r = "Negative"
-    elif result == [1]:
         r = "Positive"
-st.success('The sentiment for this tweet is : {}'.format(r))
+    elif result == [1]:
+        r = "Negative"
+st.success('This tweet is : {}'.format(r))
